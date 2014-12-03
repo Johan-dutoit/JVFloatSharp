@@ -1,7 +1,7 @@
 Float Labeled EditText
 ==============
 
-Simple implementation of a Float Labeled EditText: An Android ViewGroup which uses a child EditText and puts the hint on top of the EditText when it is populated with text.
+Simple implementation of a Float Labeled EditText for Xamarin.Android: An Android ViewGroup which uses a child EditText and puts the hint on top of the EditText when it is populated with text.
 
 iOS implementation by [@jverdi](http://www.twitter.com/jverdi): [JVFloatLabeledTextField](https://github.com/jverdi/JVFloatLabeledTextField) 
 
