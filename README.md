@@ -7,10 +7,6 @@ iOS implementation by [@jverdi](http://www.twitter.com/jverdi): [JVFloatLabeledT
 
 Credits for the concept to Matt D. Smith ([@mds](http://www.twitter.com/mds)).
 
-![Android Version](http://i.imgur.com/ucRd1jm.gif)
-
-http://dribbble.com/shots/1254439--GIF-Mobile-Form-Interaction?list=users
-
 Usage
 =====
 
