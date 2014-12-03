@@ -9,9 +9,154 @@ package jvfloatsharp.jvfloatsharp;
 
 public final class R {
     public static final class attr {
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+         */
+        public static final int fletPadding=0x7f010001;
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+         */
+        public static final int fletPaddingBottom=0x7f010005;
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+         */
+        public static final int fletPaddingLeft=0x7f010002;
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+         */
+        public static final int fletPaddingRight=0x7f010004;
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+         */
+        public static final int fletPaddingTop=0x7f010003;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int fletTextAppearance=0x7f010000;
+    }
+    public static final class dimen {
+        public static final int flet_hint_margin=0x7f020002;
+        public static final int flet_hint_text_padding_horizontal=0x7f020001;
+        public static final int flet_hint_text_size=0x7f020000;
     }
     public static final class string {
-        public static final int ApplicationName=0x7f020001;
-        public static final int Hello=0x7f020000;
+        public static final int ApplicationName=0x7f030001;
+        public static final int Hello=0x7f030000;
     }
+    public static final class styleable {
+        /** Attributes that can be used with a FloatLabeledEditText.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #FloatLabeledEditText_fletPadding JVFloatSharp.JVFloatSharp:fletPadding}</code></td><td></td></tr>
+           <tr><td><code>{@link #FloatLabeledEditText_fletPaddingBottom JVFloatSharp.JVFloatSharp:fletPaddingBottom}</code></td><td></td></tr>
+           <tr><td><code>{@link #FloatLabeledEditText_fletPaddingLeft JVFloatSharp.JVFloatSharp:fletPaddingLeft}</code></td><td></td></tr>
+           <tr><td><code>{@link #FloatLabeledEditText_fletPaddingRight JVFloatSharp.JVFloatSharp:fletPaddingRight}</code></td><td></td></tr>
+           <tr><td><code>{@link #FloatLabeledEditText_fletPaddingTop JVFloatSharp.JVFloatSharp:fletPaddingTop}</code></td><td></td></tr>
+           <tr><td><code>{@link #FloatLabeledEditText_fletTextAppearance JVFloatSharp.JVFloatSharp:fletTextAppearance}</code></td><td></td></tr>
+           </table>
+           @see #FloatLabeledEditText_fletPadding
+           @see #FloatLabeledEditText_fletPaddingBottom
+           @see #FloatLabeledEditText_fletPaddingLeft
+           @see #FloatLabeledEditText_fletPaddingRight
+           @see #FloatLabeledEditText_fletPaddingTop
+           @see #FloatLabeledEditText_fletTextAppearance
+         */
+        public static final int[] FloatLabeledEditText = {
+            0x7f010000, 0x7f010001, 0x7f010002, 0x7f010003,
+            0x7f010004, 0x7f010005
+        };
+        /**
+          <p>This symbol is the offset where the {@link JVFloatSharp.JVFloatSharp.R.attr#fletPadding}
+          attribute's value can be found in the {@link #FloatLabeledEditText} array.
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+          @attr name JVFloatSharp.JVFloatSharp:fletPadding
+        */
+        public static final int FloatLabeledEditText_fletPadding = 1;
+        /**
+          <p>This symbol is the offset where the {@link JVFloatSharp.JVFloatSharp.R.attr#fletPaddingBottom}
+          attribute's value can be found in the {@link #FloatLabeledEditText} array.
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+          @attr name JVFloatSharp.JVFloatSharp:fletPaddingBottom
+        */
+        public static final int FloatLabeledEditText_fletPaddingBottom = 5;
+        /**
+          <p>This symbol is the offset where the {@link JVFloatSharp.JVFloatSharp.R.attr#fletPaddingLeft}
+          attribute's value can be found in the {@link #FloatLabeledEditText} array.
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+          @attr name JVFloatSharp.JVFloatSharp:fletPaddingLeft
+        */
+        public static final int FloatLabeledEditText_fletPaddingLeft = 2;
+        /**
+          <p>This symbol is the offset where the {@link JVFloatSharp.JVFloatSharp.R.attr#fletPaddingRight}
+          attribute's value can be found in the {@link #FloatLabeledEditText} array.
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+          @attr name JVFloatSharp.JVFloatSharp:fletPaddingRight
+        */
+        public static final int FloatLabeledEditText_fletPaddingRight = 4;
+        /**
+          <p>This symbol is the offset where the {@link JVFloatSharp.JVFloatSharp.R.attr#fletPaddingTop}
+          attribute's value can be found in the {@link #FloatLabeledEditText} array.
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+          @attr name JVFloatSharp.JVFloatSharp:fletPaddingTop
+        */
+        public static final int FloatLabeledEditText_fletPaddingTop = 3;
+        /**
+          <p>This symbol is the offset where the {@link JVFloatSharp.JVFloatSharp.R.attr#fletTextAppearance}
+          attribute's value can be found in the {@link #FloatLabeledEditText} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name JVFloatSharp.JVFloatSharp:fletTextAppearance
+        */
+        public static final int FloatLabeledEditText_fletTextAppearance = 0;
+    };
 }
