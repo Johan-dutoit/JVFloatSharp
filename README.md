@@ -10,8 +10,6 @@ Credits for the concept to Matt D. Smith ([@mds](http://www.twitter.com/mds)).
 Usage
 =====
 
-and then insert the view in XML:
-
 ```xml
     <JVFloatSharp.FloatLabeledEditText
         android:layout_width="match_parent"
