@@ -1,11 +1,13 @@
-Float Labeled EditText
-==============
+JVFloatSharp
+============
 
-Simple implementation of a Float Labeled EditText for Xamarin.Android: An Android ViewGroup which uses a child EditText and puts the hint on top of the EditText when it is populated with text.
+This is a Xamarin.Android port of [Jared Verdi's JVFloatLabeledTextField](https://github.com/jverdi/JVFloatLabeledTextField), that changes placeholders/hints into floating labels when the field is populated with text.
 
-iOS implementation by [@jverdi](http://www.twitter.com/jverdi): [JVFloatLabeledTextField](https://github.com/jverdi/JVFloatLabeledTextField) 
+Credits for the concept to Matt D. Smith, and his original design:
 
-Credits for the concept to Matt D. Smith ([@mds](http://www.twitter.com/mds)).
+![Matt D. Smith's Design](http://dribbble.s3.amazonaws.com/users/6410/screenshots/1254439/form-animation-_gif_.gif)
+
+http://dribbble.com/shots/1254439--GIF-Mobile-Form-Interaction?list=users
 
 Usage
 =====
