@@ -1,11 +1,11 @@
 JVFloatSharp
 ============
+This is a Xamarin.Android port of [Jared Verdi's JVFloatLabeledTextField](https://github.com/jverdi/JVFloatLabeledTextField), which was directly ported from the Android version by Henrik Sandström [@heinrisch](https://twitter.com/Heinrisch)
 
-This is a Xamarin.Android port of [Jared Verdi's JVFloatLabeledTextField](https://github.com/jverdi/JVFloatLabeledTextField), that changes placeholders/hints into floating labels when the field is populated with text.
+Credits for the concept to Matt D. Smith ([@mds](http://www.twitter.com/mds)).
 
-Credits for the concept to Matt D. Smith, and his original design:
 
-![Matt D. Smith's Design](http://dribbble.s3.amazonaws.com/users/6410/screenshots/1254439/form-animation-_gif_.gif)
+![Android Version](http://i.imgur.com/ucRd1jm.gif)
 
 http://dribbble.com/shots/1254439--GIF-Mobile-Form-Interaction?list=users
 
@@ -62,3 +62,7 @@ Usage
             android:inputType="textPassword" />
     </JVFloatSharp.FloatLabeledEditText>
 ```
+
+Styled By
+=========
+* Marcus Gellemark [Dribbble](http://dribbble.com/Gellermark)
