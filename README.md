@@ -1,6 +1,6 @@
 JVFloatSharp
 ============
-This is a Xamarin.Android port of [Jared Verdi's JVFloatLabeledTextField](https://github.com/jverdi/JVFloatLabeledTextField), which was directly ported by [@Crims0n_D](https://twitter.com/Crims0n_D) from the Android version by Henrik Sandström [@heinrisch](https://twitter.com/Heinrisch)
+This is a Xamarin.Android port of [Jared Verdi's JVFloatLabeledTextField](https://github.com/jverdi/JVFloatLabeledTextField), which was directly ported by Johan du Toit[@Crims0n_D](https://twitter.com/Crims0n_D) from the [Android version](https://github.com/wrapp/floatlabelededittext) by Henrik Sandström [@heinrisch](https://twitter.com/Heinrisch)
 
 Credits for the concept to Matt D. Smith ([@mds](http://www.twitter.com/mds)).
 
