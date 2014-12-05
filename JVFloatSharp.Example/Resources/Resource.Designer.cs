@@ -26,46 +26,10 @@ namespace JVFloatSharp.Example
 		
 		public static void UpdateIdValues()
 		{
-			global::JVFloatSharp.Resource.Attribute.fletPadding = global::JVFloatSharp.Example.Resource.Attribute.fletPadding;
-			global::JVFloatSharp.Resource.Attribute.fletPaddingBottom = global::JVFloatSharp.Example.Resource.Attribute.fletPaddingBottom;
-			global::JVFloatSharp.Resource.Attribute.fletPaddingLeft = global::JVFloatSharp.Example.Resource.Attribute.fletPaddingLeft;
-			global::JVFloatSharp.Resource.Attribute.fletPaddingRight = global::JVFloatSharp.Example.Resource.Attribute.fletPaddingRight;
-			global::JVFloatSharp.Resource.Attribute.fletPaddingTop = global::JVFloatSharp.Example.Resource.Attribute.fletPaddingTop;
-			global::JVFloatSharp.Resource.Attribute.fletTextAppearance = global::JVFloatSharp.Example.Resource.Attribute.fletTextAppearance;
-			global::JVFloatSharp.Resource.Dimension.flet_hint_margin = global::JVFloatSharp.Example.Resource.Dimension.flet_hint_margin;
-			global::JVFloatSharp.Resource.Dimension.flet_hint_text_padding_horizontal = global::JVFloatSharp.Example.Resource.Dimension.flet_hint_text_padding_horizontal;
-			global::JVFloatSharp.Resource.Dimension.flet_hint_text_size = global::JVFloatSharp.Example.Resource.Dimension.flet_hint_text_size;
-			global::JVFloatSharp.Resource.String.ApplicationName = global::JVFloatSharp.Example.Resource.String.ApplicationName;
-			global::JVFloatSharp.Resource.String.Hello = global::JVFloatSharp.Example.Resource.String.Hello;
-			global::JVFloatSharp.Resource.Styleable.FloatLabeledEditText = global::JVFloatSharp.Example.Resource.Styleable.FloatLabeledEditText;
-			global::JVFloatSharp.Resource.Styleable.FloatLabeledEditText_fletPadding = global::JVFloatSharp.Example.Resource.Styleable.FloatLabeledEditText_fletPadding;
-			global::JVFloatSharp.Resource.Styleable.FloatLabeledEditText_fletPaddingBottom = global::JVFloatSharp.Example.Resource.Styleable.FloatLabeledEditText_fletPaddingBottom;
-			global::JVFloatSharp.Resource.Styleable.FloatLabeledEditText_fletPaddingLeft = global::JVFloatSharp.Example.Resource.Styleable.FloatLabeledEditText_fletPaddingLeft;
-			global::JVFloatSharp.Resource.Styleable.FloatLabeledEditText_fletPaddingRight = global::JVFloatSharp.Example.Resource.Styleable.FloatLabeledEditText_fletPaddingRight;
-			global::JVFloatSharp.Resource.Styleable.FloatLabeledEditText_fletPaddingTop = global::JVFloatSharp.Example.Resource.Styleable.FloatLabeledEditText_fletPaddingTop;
-			global::JVFloatSharp.Resource.Styleable.FloatLabeledEditText_fletTextAppearance = global::JVFloatSharp.Example.Resource.Styleable.FloatLabeledEditText_fletTextAppearance;
 		}
 		
 		public partial class Attribute
 		{
-			
-			// aapt resource value: 0x7f010001
-			public const int fletPadding = 2130771969;
-			
-			// aapt resource value: 0x7f010005
-			public const int fletPaddingBottom = 2130771973;
-			
-			// aapt resource value: 0x7f010002
-			public const int fletPaddingLeft = 2130771970;
-			
-			// aapt resource value: 0x7f010004
-			public const int fletPaddingRight = 2130771972;
-			
-			// aapt resource value: 0x7f010003
-			public const int fletPaddingTop = 2130771971;
-			
-			// aapt resource value: 0x7f010000
-			public const int fletTextAppearance = 2130771968;
 			
 			static Attribute()
 			{
@@ -73,28 +37,6 @@ namespace JVFloatSharp.Example
 			}
 			
 			private Attribute()
-			{
-			}
-		}
-		
-		public partial class Dimension
-		{
-			
-			// aapt resource value: 0x7f040002
-			public const int flet_hint_margin = 2130968578;
-			
-			// aapt resource value: 0x7f040001
-			public const int flet_hint_text_padding_horizontal = 2130968577;
-			
-			// aapt resource value: 0x7f040000
-			public const int flet_hint_text_size = 2130968576;
-			
-			static Dimension()
-			{
-				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
-			}
-			
-			private Dimension()
 			{
 			}
 		}
@@ -134,11 +76,11 @@ namespace JVFloatSharp.Example
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f050001
-			public const int ApplicationName = 2131034113;
+			// aapt resource value: 0x7f040001
+			public const int ApplicationName = 2130968577;
 			
-			// aapt resource value: 0x7f050000
-			public const int Hello = 2131034112;
+			// aapt resource value: 0x7f040000
+			public const int Hello = 2130968576;
 			
 			static String()
 			{
@@ -146,45 +88,6 @@ namespace JVFloatSharp.Example
 			}
 			
 			private String()
-			{
-			}
-		}
-		
-		public partial class Styleable
-		{
-			
-			public static int[] FloatLabeledEditText = new int[] {
-					2130771968,
-					2130771969,
-					2130771970,
-					2130771971,
-					2130771972,
-					2130771973};
-			
-			// aapt resource value: 1
-			public const int FloatLabeledEditText_fletPadding = 1;
-			
-			// aapt resource value: 5
-			public const int FloatLabeledEditText_fletPaddingBottom = 5;
-			
-			// aapt resource value: 2
-			public const int FloatLabeledEditText_fletPaddingLeft = 2;
-			
-			// aapt resource value: 4
-			public const int FloatLabeledEditText_fletPaddingRight = 4;
-			
-			// aapt resource value: 3
-			public const int FloatLabeledEditText_fletPaddingTop = 3;
-			
-			// aapt resource value: 0
-			public const int FloatLabeledEditText_fletTextAppearance = 0;
-			
-			static Styleable()
-			{
-				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
-			}
-			
-			private Styleable()
 			{
 			}
 		}
