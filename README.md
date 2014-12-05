@@ -13,54 +13,41 @@ Usage
 =====
 
 ```xml
-    <JVFloatSharp.FloatLabeledEditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="This is the hint" />
-    </JVFloatSharp.FloatLabeledEditText>
-
-    <!-- add some padding -->
-    <JVFloatSharp.FloatLabeledEditText
+ <?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+  <JVFloatSharp.FloatLabeledEditText
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content">
+    <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        float:fletPadding="10dp">
+        android:hint="This is the hint" />
+  </JVFloatSharp.FloatLabeledEditText>
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Username" />
-    </JVFloatSharp.FloatLabeledEditText>
-
-    <!-- password input -->
-    <JVFloatSharp.FloatLabeledEditText
+  <!-- add some padding -->
+  <JVFloatSharp.FloatLabeledEditText
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content">
+    <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        float:fletPaddingBottom="10dp">
+        android:hint="Username" />
+  </JVFloatSharp.FloatLabeledEditText>
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Password"
-            android:inputType="textPassword" />
-    </JVFloatSharp.FloatLabeledEditText>
-
-    <!-- change color of hint text-->
-    <JVFloatSharp.FloatLabeledEditText
+  <!-- password input -->
+  <JVFloatSharp.FloatLabeledEditText
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content">
+    <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        float:fletPaddingBottom="10dp"
-        float:fletTextAppearance="@style/floatlabelededittext">
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Styled Hint"
-            android:inputType="textPassword" />
-    </JVFloatSharp.FloatLabeledEditText>
+        android:hint="Password"
+        android:inputType="textPassword" />
+  </JVFloatSharp.FloatLabeledEditText>
+</LinearLayout>
 ```
 
 Styled By
