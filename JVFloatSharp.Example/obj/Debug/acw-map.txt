@@ -1,0 +1,2 @@
+JVFloatSharp.Example.MainActivity;jvfloatsharp.example.MainActivity
+JVFloatSharp.FloatLabeledEditText;jvfloatsharp.FloatLabeledEditText

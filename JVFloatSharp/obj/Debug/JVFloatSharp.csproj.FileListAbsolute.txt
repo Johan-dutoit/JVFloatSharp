@@ -11,3 +11,4 @@ c:\users\johan\documents\visual studio 2013\Projects\JVFloatSharp\JVFloatSharp\o
 c:\users\johan\documents\visual studio 2013\Projects\JVFloatSharp\JVFloatSharp\obj\Debug\res\values-v11\dimens.xml
 c:\users\johan\documents\visual studio 2013\Projects\JVFloatSharp\JVFloatSharp\obj\Debug\R.cs.flag
 c:\users\johan\documents\visual studio 2013\Projects\JVFloatSharp\JVFloatSharp\obj\Debug\uploadflags.txt
+C:\Users\Johan\Documents\Visual Studio 2013\Projects\JVFloatSharp\JVFloatSharp\obj\Debug\JVFloatSharp.csprojResolveAssemblyReference.cache

@@ -1,0 +1,2 @@
+C:\Users\Johan\Documents\Visual Studio 2013\Projects\JVFloatSharp\JVFloatSharp.Example\bin\Debug\JVFloatSharp.Example.dll
+C:\Users\Johan\Documents\Visual Studio 2013\Projects\JVFloatSharp\JVFloatSharp\bin\Debug\JVFloatSharp.dll
