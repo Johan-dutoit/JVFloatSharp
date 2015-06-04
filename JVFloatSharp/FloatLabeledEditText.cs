@@ -23,131 +23,129 @@
 //  IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 //  CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+using System;
 using Android.Animation;
 using Android.Content;
-using Android.Content.Res;
+using Android.Runtime;
 using Android.Text;
 using Android.Util;
 using Android.Views;
 using Android.Widget;
 using Java.Lang;
-using System;
 
 namespace JVFloatSharp
 {
+    [Register("jvfloatsharp.FloatLabeledEditText")]
     public class FloatLabeledEditText : FrameLayout
     {
-        private static float DEFAULT_PADDING_LEFT = 2;
+        private const float DefaultPaddingLeft = 2;
 
-        private TextView mHintTextView;
-        private EditText mEditText;
-
-        private Context mContext;
+        private TextView _hintTextView;
+        private EditText _editText;
 
         private bool ShowHint { get; set; }
 
-        public FloatLabeledEditText(Context context)
-            : base(context)
+        public EditText EditText
         {
-            mContext = context;
+            get { return _editText; }
+            private set
+            {
+                _editText = value;
+                _editText.AfterTextChanged += EditTextAfterTextChanged;
+                _editText.FocusChange += EditTextFocusChange;
+                _editText.Visibility = ViewStates.Visible;
+
+                _hintTextView.Text = _editText.Hint;
+                if (!string.IsNullOrEmpty(_editText.Text))
+                {
+                    _hintTextView.Visibility = ViewStates.Visible;
+                }
+            }
         }
 
-        public FloatLabeledEditText(Context context, IAttributeSet attrs)
-            : base(context, attrs)
+        public string Hint
         {
-            mContext = context;
-            SetAttributes(attrs);
+            get { return _hintTextView.Hint; }
+            set
+            {
+                _editText.Hint = value;
+                _hintTextView.Hint = value;
+            }
         }
+
+        public FloatLabeledEditText(IntPtr javaReference, JniHandleOwnership transfer)
+            : base(javaReference, transfer) { }
+
+        public FloatLabeledEditText(Context context)
+            : this(context, null) { }
+
+        public FloatLabeledEditText(Context context, IAttributeSet attrs)
+            : this(context, attrs, 0) { }
 
         public FloatLabeledEditText(Context context, IAttributeSet attrs, int defStyle)
             : base(context, attrs, defStyle)
         {
-            mContext = context;
-            SetAttributes(attrs);
+            if (attrs != null)
+                SetAttributes(attrs);
         }
 
         private void SetAttributes(IAttributeSet attrs)
         {
-            mHintTextView = new TextView(mContext);
+            _hintTextView = new TextView(Context);
 
-            var typedArray = mContext.ObtainStyledAttributes(attrs, Resource.Styleable.FloatLabeledEditText);
+            var typedArray = Context.ObtainStyledAttributes(attrs, Resource.Styleable.FloatLabeledEditText);
 
-            int padding = typedArray.GetDimensionPixelSize(Resource.Styleable.FloatLabeledEditText_fletPadding, 0);
-            int defaultPadding = (int)TypedValue.ApplyDimension(ComplexUnitType.Dip, DEFAULT_PADDING_LEFT, Resources.DisplayMetrics);
-            int paddingLeft = typedArray.GetDimensionPixelSize(Resource.Styleable.FloatLabeledEditText_fletPaddingLeft, defaultPadding);
-            int paddingTop = typedArray.GetDimensionPixelSize(Resource.Styleable.FloatLabeledEditText_fletPaddingTop, 0);
-            int paddingRight = typedArray.GetDimensionPixelSize(Resource.Styleable.FloatLabeledEditText_fletPaddingRight, 0);
-            int paddingBottom = typedArray.GetDimensionPixelSize(Resource.Styleable.FloatLabeledEditText_fletPaddingBottom, 0);
+            var padding = typedArray.GetDimensionPixelSize(Resource.Styleable.FloatLabeledEditText_fletPadding, 0);
+            var defaultPadding = (int)TypedValue.ApplyDimension(ComplexUnitType.Dip, DefaultPaddingLeft, Resources.DisplayMetrics);
+            var paddingLeft = typedArray.GetDimensionPixelSize(Resource.Styleable.FloatLabeledEditText_fletPaddingLeft, defaultPadding);
+            var paddingTop = typedArray.GetDimensionPixelSize(Resource.Styleable.FloatLabeledEditText_fletPaddingTop, 0);
+            var paddingRight = typedArray.GetDimensionPixelSize(Resource.Styleable.FloatLabeledEditText_fletPaddingRight, 0);
+            var paddingBottom = typedArray.GetDimensionPixelSize(Resource.Styleable.FloatLabeledEditText_fletPaddingBottom, 0);
 
             if (padding != 0)
-            {
-                mHintTextView.SetPadding(padding, padding, padding, padding);
-            }
+                _hintTextView.SetPadding(padding, padding, padding, padding);
             else
-            {
-                mHintTextView.SetPadding(paddingLeft, paddingTop, paddingRight, paddingBottom);
-            }
+                _hintTextView.SetPadding(paddingLeft, paddingTop, paddingRight, paddingBottom);
 
-            mHintTextView.SetTextAppearance(mContext, typedArray.GetResourceId(Resource.Styleable.FloatLabeledEditText_fletTextAppearance, global::Android.Resource.Style.TextAppearanceSmall));
+            _hintTextView.SetTextAppearance(Context, typedArray.GetResourceId(Resource.Styleable.FloatLabeledEditText_fletTextAppearance, Android.Resource.Style.TextAppearanceSmall));
 
             //Start hidden
-            mHintTextView.Visibility = Android.Views.ViewStates.Invisible;
+            _hintTextView.Visibility = ViewStates.Invisible;
 
-            AddView(mHintTextView, LayoutParams.WrapContent, LayoutParams.WrapContent);
+            AddView(_hintTextView, ViewGroup.LayoutParams.WrapContent, ViewGroup.LayoutParams.WrapContent);
 
             typedArray.Recycle();
         }
 
         public override void AddView(View child, int index, ViewGroup.LayoutParams layoutParams)
         {
-            if (child is EditText)
+            var text = child as EditText;
+            if (text != null)
             {
-                if (mEditText != null)
-                {
+                if (_editText != null)
                     throw new IllegalArgumentException("Can only have one Edittext subview");
-                }
 
-                LayoutParams lp = new LayoutParams(layoutParams);
-                lp.Gravity = GravityFlags.Bottom;
-                lp.TopMargin = (int)(mHintTextView.TextSize + mHintTextView.PaddingBottom + mHintTextView.PaddingTop);
+                var lp = new LayoutParams(layoutParams) {
+                    Gravity = GravityFlags.Bottom,
+                    TopMargin =
+                        (int)
+                            (_hintTextView.TextSize + _hintTextView.PaddingBottom +
+                             _hintTextView.PaddingTop)
+                };
                 layoutParams = lp;
 
-                SetEditText((EditText)child);
+                EditText = text;
             }
 
             base.AddView(child, index, layoutParams);
         }
 
-        private void SetEditText(EditText editText)
-        {
-            mEditText = editText;
-            mEditText.AfterTextChanged += mEditTextAfterTextChanged;
-            mEditText.BeforeTextChanged += mEditTextBeforeTextChanged;
-            mEditText.TextChanged += mEditTextTextChanged;
-            mEditText.FocusChange += mEditText_FocusChange;
-            mEditText.Visibility = ViewStates.Visible;
-
-            mHintTextView.Text = mEditText.Hint;
-            if (!TextUtils.IsEmpty(mEditText.Text))
-            {
-                mHintTextView.Visibility = ViewStates.Visible;
-            }
-        }
-
-        private void mEditText_FocusChange(object sender, View.FocusChangeEventArgs e)
+        private void EditTextFocusChange(object sender, FocusChangeEventArgs e)
         {
             OnFocusChanged(e.HasFocus);
         }
 
-        private void mEditTextTextChanged(object sender, TextChangedEventArgs e)
-        {
-        }
-
-        private void mEditTextBeforeTextChanged(object sender, TextChangedEventArgs e)
-        {
-        }
-
-        private void mEditTextAfterTextChanged(object sender, AfterTextChangedEventArgs e)
+        private void EditTextAfterTextChanged(object sender, AfterTextChangedEventArgs e)
         {
             ShowHint = !TextUtils.IsEmpty(e.Editable);
             SetShowHint();
@@ -155,77 +153,52 @@ namespace JVFloatSharp
 
         private void OnFocusChanged(bool gotFocus)
         {
-            if (gotFocus && mHintTextView.Visibility == ViewStates.Visible)
+            if (gotFocus && _hintTextView.Visibility == ViewStates.Visible)
             {
-                ObjectAnimator.OfFloat(mHintTextView, "alpha", 0.33f, 1f).Start();
+                ObjectAnimator.OfFloat(_hintTextView, "alpha", 0.33f, 1f).Start();
             }
-            else if (mHintTextView.Visibility == ViewStates.Visible)
+            else if (_hintTextView.Visibility == ViewStates.Visible)
             {
-                ObjectAnimator.OfFloat(mHintTextView, "alpha", 1f, 0.33f).Start();
+                ObjectAnimator.OfFloat(_hintTextView, "alpha", 1f, 0.33f).Start();
             }
         }
 
         private void SetShowHint()
         {
             AnimatorSet animation = null;
-            if ((mHintTextView.Visibility == ViewStates.Visible) && !ShowHint)
+            if ((_hintTextView.Visibility == ViewStates.Visible) && !ShowHint)
             {
                 animation = new AnimatorSet();
-                ObjectAnimator move = ObjectAnimator.OfFloat(mHintTextView, "translationY", 0, mHintTextView.Height / 8);
-                ObjectAnimator fade = ObjectAnimator.OfFloat(mHintTextView, "alpha", 1, 0);
+                var move = ObjectAnimator.OfFloat(_hintTextView, "translationY", 0, _hintTextView.Height / 8f);
+                var fade = ObjectAnimator.OfFloat(_hintTextView, "alpha", 1, 0);
                 animation.PlayTogether(move, fade);
             }
-            else if ((mHintTextView.Visibility != ViewStates.Visible) && ShowHint)
+            else if ((_hintTextView.Visibility != ViewStates.Visible) && ShowHint)
             {
                 animation = new AnimatorSet();
-                ObjectAnimator move = ObjectAnimator.OfFloat(mHintTextView, "translationY", mHintTextView.Height / 8, 0);
-                ObjectAnimator fade;
-                if (mEditText.IsFocused)
-                {
-                    fade = ObjectAnimator.OfFloat(mHintTextView, "alpha", 0, 1);
-                }
-                else
-                {
-                    fade = ObjectAnimator.OfFloat(mHintTextView, "alpha", 0, 0.33f);
-                }
+                var move = ObjectAnimator.OfFloat(_hintTextView, "translationY", _hintTextView.Height / 8f, 0);
+                var fade = ObjectAnimator.OfFloat(_hintTextView, "alpha", 0,
+                    _editText.IsFocused ? 1 : 0.33f);
                 animation.PlayTogether(move, fade);
             }
 
-            if (animation != null)
-            {
-                animation.AnimationStart += AnimationAnimationStart;
-                animation.AnimationEnd += AnimationAnimationEnd;
-                animation.Start();
-            }
+            if (animation == null) return;
+
+            animation.AnimationStart += AnimationAnimationStart;
+            animation.AnimationEnd += AnimationAnimationEnd;
+            animation.Start();
         }
 
         private void AnimationAnimationStart(object sender, EventArgs e)
         {
-            base.OnAnimationStart();
-            mHintTextView.Visibility = ViewStates.Visible;
+            OnAnimationStart();
+            _hintTextView.Visibility = ViewStates.Visible;
         }
 
         private void AnimationAnimationEnd(object sender, EventArgs e)
         {
-            base.OnAnimationEnd();
-
-            mHintTextView.Visibility = ShowHint ? ViewStates.Visible : ViewStates.Invisible;
-        }
-
-        public EditText GetEditText()
-        {
-            return mEditText;
-        }
-
-        public void SetHint(string hint)
-        {
-            mEditText.Hint = hint;
-            mHintTextView.Text = hint;
-        }
-
-        public string GetHint()
-        {
-            return mHintTextView.Hint;
+            OnAnimationEnd();
+            _hintTextView.Visibility = ShowHint ? ViewStates.Visible : ViewStates.Invisible;
         }
     }
 }

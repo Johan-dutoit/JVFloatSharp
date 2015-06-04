@@ -2,34 +2,32 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent" >
-  <JVFloatSharp.FloatLabeledEditText
-         android:layout_width="match_parent"
-         android:layout_height="wrap_content">
-    <EditText
+    android:layout_height="fill_parent">
+    <jvfloatsharp.FloatLabeledEditText
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="This is the hint" />
-  </JVFloatSharp.FloatLabeledEditText>
-
-  <!-- add some padding -->
-  <JVFloatSharp.FloatLabeledEditText
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content">
-    <EditText
+        android:layout_height="wrap_content">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="This is the hint" />
+    </jvfloatsharp.FloatLabeledEditText>
+<!-- add some padding -->
+    <jvfloatsharp.FloatLabeledEditText
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Username" />
-  </JVFloatSharp.FloatLabeledEditText>
-
-  <!-- password input -->
-  <JVFloatSharp.FloatLabeledEditText
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content">
-    <EditText
+        android:layout_height="wrap_content">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Username" />
+    </jvfloatsharp.FloatLabeledEditText>
+<!-- password input -->
+    <jvfloatsharp.FloatLabeledEditText
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Password"
-        android:inputType="textPassword" />
-  </JVFloatSharp.FloatLabeledEditText>
+        android:layout_height="wrap_content">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            android:inputType="textPassword" />
+    </jvfloatsharp.FloatLabeledEditText>
 </LinearLayout>

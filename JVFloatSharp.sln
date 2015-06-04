@@ -1,11 +1,16 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30723.0
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JVFloatSharp", "JVFloatSharp\JVFloatSharp.csproj", "{CFC4B434-E24C-4E39-A51A-DE0F943F9ABC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JVFloatSharp.Example", "JVFloatSharp.Example\JVFloatSharp.Example.csproj", "{DD9B7F2A-F7D4-4613-A4C8-72F18A06B8B1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{829FBD3B-15EE-4F65-A6C8-B5C7C8B18A67}"
+	ProjectSection(SolutionItems) = preProject
+		jvfloatsharp.nuspec = jvfloatsharp.nuspec
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
