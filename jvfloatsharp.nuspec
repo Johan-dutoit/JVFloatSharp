@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+	<metadata>
+		<id>jvfloatsharp</id>
+		<version>1.0.0</version>
+		<title>JVFloatSharp</title>
+		<authors>Johan Dutoit, Tomasz Cielecki</authors>
+		<owners>Tomasz Cielecki</owners>
+		<licenseUrl>https://github.com/Cheesebaron/JVFloatSharp/blob/master/LICENSE</licenseUrl>
+		<projectUrl>https://github.com/Cheesebaron/JVFloatSharp</projectUrl>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<description>EditText implementation where the hint floats above the EditText when editing.</description>
+		<tags>xamarin monodroid view edittext jvfloat hint</tags>
+	</metadata>
+	<files>
+		<file src="JVFloatSharp\bin\Release\JVFloatSharp.*" target="lib\MonoAndroid10" />
+	</files>
+</package>
